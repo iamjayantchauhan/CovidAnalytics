@@ -12,8 +12,6 @@ import pureconfig.generic.auto._
 import scala.io.Source
 
 object AppUtil {
-  Logger.getLogger("org").setLevel(Level.ERROR)
-  Logger.getLogger("akka").setLevel(Level.ERROR)
 
   def configuration: Configuration = {
     val configReader = ConfigSource.default.loadOrThrow[Configuration]
