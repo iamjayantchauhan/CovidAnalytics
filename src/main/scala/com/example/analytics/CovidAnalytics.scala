@@ -47,7 +47,7 @@ object CovidAnalytics {
     val modifiedDF = wholeDF.withColumn("lastUpdatedAtApify", date_format(wholeDF("lastUpdatedAtApify"), "dd/MM/YYYY"))
 
     //Highest number of deaths top 10
-    modifiedDF.sort(desc("lastUpdatedAtApify")).show(100)
+    modifiedDF.sort(desc("activeCases")).show(100)
 
   }
 }
