@@ -34,6 +34,10 @@ object AppUtil {
   def objectMapper: ObjectMapper = {
     val objectMapper: ObjectMapper = new ObjectMapper()
     objectMapper.registerModule(DefaultScalaModule)
+    import com.fasterxml.jackson.databind.DeserializationFeature
+    objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    import com.fasterxml.jackson.databind.DeserializationFeature
+    objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true)
     objectMapper
   }
 }
